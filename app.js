@@ -159,3 +159,17 @@ const accionBotones = () => {
 
 // console.log(carritoEjemplo[1])
 
+const open = document.getElementById('open');
+const mcontainer = document.getElementById('mcontainer');
+const close = document.getElementById('close');
+
+open.addEventListener('click', () => {
+mcontainer.classList.add('show');
+
+});
+
+close.addEventListener('click', () => {
+mcontainer.classList.remove('show');
+    
+    });
+
