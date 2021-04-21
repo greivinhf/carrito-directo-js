@@ -4,39 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://getbootstrap.com/docs/4.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
+    <link rel="stylesheet" href="estilo.css" >
+   
 </head>
 <body>
+ 
     <div class="container">
-        <h1 class="text-center">Carrito</h1>
+      <!--boton superior de carrito de compras-->
+        <h1 class="text-right"><button type="button" id="open" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable">
+          <b></b><svg xmlns="http://www.w3.org/2000/svg" width="40" height="24" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+              </svg></button></b> 
+        </button>
+      </h1>
+      <!--Fin boton superior de carrito de compras-->
         <hr>
-
+        <!---->
         <div class="my-5">
-            <h4>Carrito de compras</h4>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Item</th>
-                  <th scope="col">Cantidad</th>
-                  <th scope="col">Acción</th>
-                  <th scope="col">Total</th>
-                </tr>
-              </thead>
-              <tbody id="items"></tbody>
-              <tfoot>
-                <tr id="footer-carrito">
-                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-                </tr>
-              </tfoot>
-            </table>
+            <h4>Artículos</h4>
           </div>
-
         <div class="row" id="contenedor-productos"></div>
 
-
     </div>
+
+
+    <!--Inicio ventana modal del los productos añadidos al carrito-->
+    <div id="mcontainer" class="mcontainer">
+      <div class="modalx">
+        <h2><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
+          </svg> Carrito de compras</h2>
+        <p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Acción</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody id="items"></tbody>
+            <tfoot>
+              <tr id="footer-carrito">
+                  <th scope="row" colspan="5">Su carrito está vacío !</th>
+              </tr>
+            </tfoot>
+          </table>
+        </p>
+    <button id="close" class="btn-secondary">Cerrar</button>
+    <button id="pago" class="btn-primary" >Proceder con el pago</button>
+      </div>
+    </div>
+<!--Fin ventana modal del los productos añadidos al carrito-->
+
 
     <template id="template-footer">
         <th scope="row" colspan="2">Total productos</th>
