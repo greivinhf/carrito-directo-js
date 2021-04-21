@@ -1,5 +1,5 @@
-[
-    {
+{
+    "articulos": [{
         "precio": 500,
         "id": 1,
         "title": "Café",
@@ -34,5 +34,5 @@
         "id": 6,
         "title": "Chela",
         "thumbnailUrl": "https://picsum.photos/id/50/600"
-    }
-]
+    }]
+}
